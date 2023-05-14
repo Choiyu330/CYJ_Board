@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 public class BoardListResponseDto {
+    // 게시글 목록 ResponseDto
     private String title;
     private LocalDateTime createdAt;
 }

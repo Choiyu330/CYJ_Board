@@ -2,8 +2,8 @@ package com.java.CYJ_Board.board.controller;
 
 import com.java.CYJ_Board.board.dto.BoardPostDto;
 import com.java.CYJ_Board.board.entity.Board;
-import com.java.CYJ_Board.board.entity.RelatedBoard;
 import com.java.CYJ_Board.board.mapper.BoardMapper;
+import com.java.CYJ_Board.board.repository.BoardRepository;
 import com.java.CYJ_Board.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BoardController {
     private final BoardService boardService;
+    private final BoardRepository boardRepository;
     private final BoardMapper boardMapper;
 
     // 게시글 작성
@@ -38,11 +39,11 @@ public class BoardController {
     }
 
     // 연관 게시글 조회
-    @GetMapping("/related/{boardId}")
+    @GetMapping("/{boardId}/related")
     public ResponseEntity getRelatedBoards(@PathVariable("boardId") Long boardId) {
         Board board = boardService.findBoard(boardId);
         List<Board> relatedBoard = boardService.findRelatedBoards(board);
 
-        return new ResponseEntity<>(boardMapper.boardsToRelatedBoardResponseDto(relatedBoard), HttpStatus.OK);
+        return new ResponseEntity<>(boardMapper.boardToBoardAllResponseDto(board, relatedBoard), HttpStatus.OK);
     }
 }

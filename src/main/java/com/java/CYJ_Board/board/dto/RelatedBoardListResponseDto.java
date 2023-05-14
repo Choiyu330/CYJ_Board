@@ -10,5 +10,7 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 public class RelatedBoardListResponseDto {
+    // 연관 게시글 목록 ResponseDto
+    private Long relatedId;
     private String title;
 }
