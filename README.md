@@ -12,4 +12,12 @@
 - 연관 게시글 조회(빈도 단어 2개 이상 존재 시)
 
 ▶️ Postman API 문서
-<br> https://documenter.getpostman.com/view/23682195/2s93eePU5Z#fd701792-9f00-4705-92a2-12d03171185c </br>
+<br> 
+- https://documenter.getpostman.com/view/23682195/2s93eePU5Z#fd701792-9f00-4705-92a2-12d03171185c 
+</br>
+
+#
+▶️ 회고
+<br> 
+- https://workinghard-elmo.tistory.com/9 
+</br>
